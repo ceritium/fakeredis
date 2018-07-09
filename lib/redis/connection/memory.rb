@@ -91,6 +91,12 @@ class Redis
       def disconnect
       end
 
+      Connection = Struct.new("Connection", :host, :port, :db, :location, :id)
+
+      def connection
+        @connection ||= Connection.new(options[:host], options[:port], options[:db], options[:location], options[:id])
+      end
+
       def client(command, _options = {})
         case command
         when :setname then true
