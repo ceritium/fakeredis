@@ -1,5 +1,5 @@
 module FakeRedis
-  TRANSACTION_COMMANDS = [:discard, :exec, :multi, :watch, :unwatch, :client]
+  TRANSACTION_COMMANDS = [:discard, :exec, :multi, :watch, :unwatch, :client, :connection]
 
   module TransactionCommands
     def self.included(klass)
